@@ -1,0 +1,696 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>智启新元 · 人工智能 × 新质生产力</title>
+<meta name="description" content="用数据可视化展现人工智能作为新质生产力的作用与意义">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Cdefs%3E%3ClinearGradient id='g' x1='0' y1='0' x2='1' y2='1'%3E%3Cstop offset='0' stop-color='%2322d3ee'/%3E%3Cstop offset='1' stop-color='%23a855f7'/%3E%3C/linearGradient%3E%3C/defs%3E%3Ccircle cx='50' cy='50' r='42' fill='url(%23g)'/%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="css/style.css">
+<script src="https://cdn.jsdelivr.net/npm/echarts@5.5.0/dist/echarts.min.js"></script>
+</head>
+<body>
+
+<!-- 滚动进度条 -->
+<div id="progressBar"></div>
+
+<!-- 导航栏 -->
+<nav id="navbar">
+  <div class="nav-inner">
+    <div class="nav-logo">
+      <span class="logo-dot"></span>智启新元<span class="logo-sub">AI × NQPF</span>
+    </div>
+    <ul class="nav-links" id="navLinks">
+      <li><a href="#hero" class="active" data-i18n="nav_home">首页</a></li>
+      <li><a href="#concept" data-i18n="nav_concept">概念解码</a></li>
+      <li><a href="#macro" data-i18n="nav_macro">宏观脉动</a></li>
+      <li><a href="#kernel" data-i18n="nav_kernel">智能内核</a></li>
+      <li><a href="#industry" data-i18n="nav_industry">产业赋能</a></li>
+      <li><a href="#map" data-i18n="nav_map">区域版图</a></li>
+      <li><a href="#efficiency" data-i18n="nav_efficiency">效率革命</a></li>
+      <li><a href="#lab" data-i18n="nav_lab">生产力实验室</a></li>
+
+      <li><a href="#jobs" data-i18n="nav_jobs">就业重塑</a></li>
+      <li><a href="#govern" data-i18n="nav_govern">谱系治理</a></li>
+      <li><a href="#timeline" data-i18n="nav_timeline">浪潮之巅</a></li>
+      <li><a href="#future" data-i18n="nav_future">未来展望</a></li>
+    </ul>
+    <div class="nav-tools">
+      <button id="themeToggle" data-i18n="btn_theme" title="切换主题">🌓 主题</button>
+      <button id="langToggle" data-i18n="btn_lang" title="切换语言">中 / EN</button>
+    </div>
+    <button id="menuToggle" aria-label="菜单">☰</button>
+  </div>
+</nav>
+
+<!-- ============ 1. HERO ============ -->
+<header id="hero" class="snap-page">
+  <canvas id="neuralCanvas"></canvas>
+  <div class="hero-glow"></div>
+  <div class="hero-content">
+    <div class="hero-tag reveal" data-i18n="hero_tag">NEW QUALITY PRODUCTIVE FORCES</div>
+    <h1 class="hero-title">
+      <span class="line" data-i18n="hero_title">人工智能</span>
+      <span class="line gradient-text" data-i18n="hero_title2">新质生产力的核心引擎</span>
+    </h1>
+    <p class="hero-desc" data-i18n-html="hero_desc">以智能技术重塑劳动者、劳动资料与劳动对象，<br>推动生产力实现质的跃迁与效率的指数级提升</p>
+    <div class="hero-stats" id="heroStats">
+      <div class="stat-card">
+        <div class="stat-num"><span class="counter" data-target="5784" data-decimals="0">0</span><em data-i18n="mb_yi">亿元</em></div>
+        <div class="stat-label" data-i18n="stat_industry">中国AI核心产业规模（2023）</div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-num"><span class="counter" data-target="4500" data-decimals="0">0</span><em>+</em></div>
+        <div class="stat-label" data-i18n="stat_enterprises">人工智能企业数量</div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-num"><span class="counter" data-target="3.8" data-decimals="1">0</span><em data-i18n="mb_wan">万件</em></div>
+        <div class="stat-label" data-i18n="stat_patents">生成式AI专利申请量（全球第一）</div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-num"><span class="counter" data-target="470" data-decimals="0">0</span><em data-i18n="mb_tai">台/万人</em></div>
+        <div class="stat-label" data-i18n="stat_robots">制造业机器人密度（全球第三）</div>
+      </div>
+    </div>
+  </div>
+  <a class="scroll-hint" href="#concept"><span></span><i data-i18n="scroll_hint">向下滚动探索</i></a>
+</header>
+
+<main>
+
+<!-- ============ 2. 概念解码 ============ -->
+<section id="concept" class="section">
+  <div class="snap-page">
+  <div class="section-head reveal">
+    <h2><span class="section-index">01</span><span data-i18n="s01_title">概念解码</span><span class="en" data-i18n="s01_en">WHAT IS NQPF</span></h2>
+    <p class="section-sub" data-i18n="s01_sub">新质生产力：由技术革命性突破、生产要素创新性配置、产业深度转型升级而催生的先进生产力质态</p>
+  </div>
+
+  <div class="concept-grid">
+    <div class="concept-def reveal">
+      <h3 data-i18n="concept_formula">新质生产力的公式</h3>
+      <p class="concept-lead" data-i18n="concept_lead">人工智能作为通用技术，通过技术突破重塑生产要素配置，驱动产业转型升级，是培育新质生产力的核心引擎。</p>
+      <div class="formula">
+        <div class="f-item" data-i18n="concept_p1">技术革命性突破</div>
+        <span class="f-op">×</span>
+        <div class="f-item" data-i18n="concept_p2">要素创新性配置</div>
+        <span class="f-op">×</span>
+        <div class="f-item" data-i18n="concept_p3">产业深度转型</div>
+        <span class="f-op">=</span>
+        <div class="f-item f-result" data-i18n="concept_result">新质生产力</div>
+      </div>
+      <p data-i18n="concept_desc">以<em>高科技、高效能、高质量</em>为特征，以全要素生产率大幅提升为核心标志。人工智能正是这场跃迁中最重要的通用目的技术（GPT）——它像电力与互联网一样，渗透到经济的每一个角落。</p>
+      <blockquote data-i18n="concept_quote">“整合科技创新资源，引领发展战略性新兴产业和未来产业，加快形成新质生产力。”<cite data-i18n="concept_quote_src">—— 2023年9月，首次提出“新质生产力”</cite></blockquote>
+    </div>
+
+    <div class="role-cards">
+      <div class="flip-card reveal" data-delay="0">
+        <div class="flip-inner">
+          <div class="flip-front">
+            <div class="flip-icon">🧠</div>
+            <h4 data-i18n="role_labor">新型劳动者</h4>
+            <p data-i18n="role_labor_p">AI成为人类的“智能外脑”</p>
+          </div>
+          <div class="flip-back">
+            <h4 data-i18n="role_labor">新型劳动者</h4>
+            <p data-i18n="role_labor_back">大模型与智能体（Agent）成为“数字员工”，参与编程、设计、分析、决策。</p>
+          </div>
+        </div>
+      </div>
+      <div class="flip-card reveal" data-delay="120">
+        <div class="flip-inner">
+          <div class="flip-front">
+            <div class="flip-icon">⚙️</div>
+            <h4 data-i18n="role_tools">新型劳动资料</h4>
+            <p data-i18n="role_tools_p">智能工具与算力基础设施</p>
+          </div>
+          <div class="flip-back">
+            <h4 data-i18n="role_tools">新型劳动资料</h4>
+            <p data-i18n="role_tools_back">工业机器人、智能机床、算力中心构成新一代“生产工具”。</p>
+          </div>
+        </div>
+      </div>
+      <div class="flip-card reveal" data-delay="240">
+        <div class="flip-inner">
+          <div class="flip-front">
+            <div class="flip-icon">💎</div>
+            <h4 data-i18n="role_data">新型劳动对象</h4>
+            <p data-i18n="role_data_p">数据要素成为新“石油”</p>
+          </div>
+          <div class="flip-back">
+            <h4 data-i18n="role_data">新型劳动对象</h4>
+            <p data-i18n="role_data_back">数据成为关键生产要素被加工、交易、增值。</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- 生产力演进时间轴 -->
+  <div class="evolution reveal">
+    <h3 class="evo-title" data-i18n="evo_title">生产力演进史：每一次通用技术革命，都重写世界经济格局</h3>
+    <div class="evo-track">
+      <div class="evo-node" style="--i:0">
+        <div class="evo-year">18世纪60年代</div>
+        <div class="evo-dot"></div>
+        <div class="evo-card"><b data-i18n="evo_1_b">蒸汽时代</b><span data-i18n="evo_1_s">蒸汽机 · 机械化生产</span><i data-i18n="evo_1_i">效率跃升：手工 → 机器</i></div>
+      </div>
+      <div class="evo-node" style="--i:1">
+        <div class="evo-year">19世纪70年代</div>
+        <div class="evo-dot"></div>
+        <div class="evo-card"><b data-i18n="evo_2_b">电气时代</b><span data-i18n="evo_2_s">电力 · 大规模流水线</span><i data-i18n="evo_2_i">效率跃升：机器 → 规模化</i></div>
+      </div>
+      <div class="evo-node" style="--i:2">
+        <div class="evo-year">20世纪中叶</div>
+        <div class="evo-dot"></div>
+        <div class="evo-card"><b data-i18n="evo_3_b">信息时代</b><span data-i18n="evo_3_s">计算机 · 互联网</span><i data-i18n="evo_3_i">效率跃升：规模化 → 数字化</i></div>
+      </div>
+      <div class="evo-node active" style="--i:3">
+        <div class="evo-year">21世纪20年代</div>
+        <div class="evo-dot"></div>
+        <div class="evo-card"><b data-i18n="evo_4_b">智能时代</b><span data-i18n="evo_4_s">人工智能 · 大模型</span><i data-i18n="evo_4_i">效率跃升：数字化 → 智能化</i></div>
+      </div>
+    </div>
+  </div>
+  </div>
+</section>
+
+<!-- ============ 3. 宏观脉动 ============ -->
+<section id="macro" class="section">
+  <div class="snap-page">
+  <div class="section-head reveal">
+    <h2><span class="section-index">02</span><span data-i18n="s02_title">宏观脉动</span><span class="en" data-i18n="s02_en">MACRO DATA</span></h2>
+    <p class="section-sub" data-i18n="s02_sub">从产业规模到全球格局，数据见证AI作为新质生产力的磅礴动能</p>
+  </div>
+
+  <div class="macro-layout">
+    <div class="charts-grid">
+    <div class="chart-card reveal">
+      <h3 data-i18n="ch_industry">中国人工智能核心产业规模</h3>
+      <p class="chart-note" data-i18n="note_industry">单位：亿元 · 2024/2025为预测值 · 来源：中国信通院及公开资料整理</p>
+      <div id="chartIndustry" class="chart chart-lg"></div>
+    </div>
+    <div class="chart-card reveal">
+      <h3 data-i18n="ch_gdp">2030年AI对全球经济贡献预测</h3>
+      <p class="chart-note" data-i18n="note_gdp">单位：万亿美元 · 来源：普华永道（PwC）《Sizing the Prize》</p>
+      <div id="chartGdp" class="chart chart-lg"></div>
+    </div>
+    <div class="chart-card reveal">
+      <h3 data-i18n="ch_compute">中国算力总规模增长</h3>
+      <p class="chart-note" data-i18n="note_compute">单位：EFLOPS · 来源：《中国算力发展指数白皮书》、工信部</p>
+      <div id="chartCompute" class="chart"></div>
+    </div>
+    <div class="chart-card reveal">
+      <h3 data-i18n="ch_radar">新质生产力要素跃迁</h3>
+      <p class="chart-note" data-i18n="note_radar">传统生产力 vs 新质生产力要素能级对比（示意）</p>
+      <div id="chartRadar" class="chart"></div>
+    </div>
+  </div>
+
+  <div class="macro-banner reveal">
+    <div class="mb-item"><b class="counter" data-target="15.7" data-decimals="1">0</b><span data-i18n="mb1">万亿美元</span><p data-i18n="mb1p">2030年AI对全球经济总贡献（PwC预测）</p></div>
+    <div class="mb-item"><b class="counter" data-target="60" data-decimals="0">0</b><span data-i18n="mb2">%+</span><p data-i18n="mb2p">中国AI专利占全球比例（WIPO）</p></div>
+    <div class="mb-item"><b class="counter" data-target="79" data-decimals="0">0</b><span data-i18n="mb3">家</span><p data-i18n="mb3p">中国“灯塔工厂”数量（全球189家中居第一）</p></div>
+    <div class="mb-item"><b class="counter" data-target="6" data-decimals="0">0</b><span data-i18n="mb4">亿+</span><p data-i18n="mb4p">中国生成式AI产品注册用户规模</p></div>
+  </div>
+  </div>
+  </div>
+</section>
+
+<!-- ============ 7. 智能内核（AI如何学习） ============ -->
+<section id="kernel" class="section">
+  <div class="snap-page">
+  <div class="section-head reveal">
+    <h2><span class="section-index">03</span><span data-i18n="s08_title">智能内核</span><span class="en" data-i18n="s08_en">HOW AI LEARNS</span></h2>
+    <p class="section-sub" data-i18n="s08_sub">神经网络不是魔法：在这里投放数据、亲手训练一个AI，观察决策边界如何在梯度下降中生长</p>
+  </div>
+
+  <div class="kernel-wrap reveal">
+    <div class="ml-lab chart-card">
+      <div class="ml-toolbar">
+        <div class="ml-group">
+          <span class="ml-glabel" data-i18n="ml_ds">数据集</span>
+          <button data-ds="linear" data-i18n="ds_linear">线性可分</button>
+          <button data-ds="moon" class="active" data-i18n="ds_moon">月牙交错</button>
+          <button data-ds="circle" data-i18n="ds_circle">同心圆环</button>
+        </div>
+        <div class="ml-group">
+          <span class="ml-glabel" data-i18n="ml_model">模型</span>
+          <button data-model="lr" data-i18n="ml_lr_model">逻辑回归</button>
+          <button data-model="nn" class="active" data-i18n="ml_nn">神经网络</button>
+        </div>
+        <div class="ml-group">
+          <span class="ml-glabel" data-i18n="ml_add">投放</span>
+          <button data-mlcls="0" class="active cls-a" data-i18n="ml_class_a">◆ 蓝色类</button>
+          <button data-mlcls="1" class="cls-b" data-i18n="ml_class_b">◆ 紫色类</button>
+        </div>
+        <div class="ml-group ml-sliders">
+          <label><span data-i18n="ml_lr">学习率</span><b id="mlLrVal">0.12</b>
+            <input type="range" id="mlLr" min="0.01" max="0.5" step="0.01" value="0.12"></label>
+          <label><span data-i18n="ml_hidden">隐藏神经元</span><b id="mlHVal">6</b>
+            <input type="range" id="mlHidden" min="2" max="10" step="1" value="6"></label>
+        </div>
+        <div class="ml-group">
+          <button id="mlRun" class="ml-run">⏸</button>
+          <button id="mlClear" data-i18n="ml_clear">清空</button>
+        </div>
+      </div>
+      <canvas id="mlCanvas" class="ml-canvas"></canvas>
+      <div class="ml-foot">
+        <div class="ml-stat"><span data-i18n="ml_epoch">迭代轮次</span><b id="mlEpoch">0</b></div>
+        <div class="ml-stat"><span data-i18n="ml_loss">损失 Loss</span><b id="mlLoss">—</b></div>
+        <div class="ml-stat"><span data-i18n="ml_acc">训练准确率</span><b id="mlAcc">—</b></div>
+        <div class="ml-lossbox">
+          <i data-i18n="ml_loss_title">损失下降曲线</i>
+          <canvas id="lossCanvas"></canvas>
+        </div>
+      </div>
+      <p class="chart-note" data-i18n="ml_guide">👆 在画布上点击或拖动可手动投放样本；换"同心圆环+逻辑回归"试试——线性模型将永远无法画出弯曲的边界，这就是深度网络的价值</p>
+    </div>
+
+    <div class="kernel-side">
+      <div class="chart-card kernel-note">
+        <h3 data-i18n="ml_tip_title">🧠 神经网络在学什么？</h3>
+        <p data-i18n-html="ml_tip_p">每个数据点有两个坐标(x₁,x₂)和一个类别。<b>逻辑回归</b>只能学出一条直线分界；<b>单隐藏层神经网络</b>通过加权求和→非线性激活(tanh)→再加权，把空间"掰弯"，从而围出任意形状的边界。<br><br>训练使用真实的<b>反向传播+梯度下降</b>：每轮计算所有样本的预测误差，沿误差下降最快的方向微调权重——这就是大模型万亿参数更新的微观原理。</p>
+      </div>
+      <div class="chart-card">
+        <h3 data-i18n="bench_title">人类 vs AI：基准突破时间线</h3>
+        <p class="chart-note" data-i18n="bench_note">AI 在该基准上达到或超过人类水平的年份 · 来源：Stanford AI Index</p>
+        <div id="benchChart" style="height:330px"></div>
+      </div>
+    </div>
+  </div>
+  </div>
+</section>
+
+<!-- ============ 4. 产业赋能 ============ -->
+<section id="industry" class="section">
+  <div class="snap-page">
+  <div class="section-head reveal">
+    <h2><span class="section-index">04</span><span data-i18n="s03_title">产业赋能</span><span class="en" data-i18n="s03_en">AI EMPOWERS INDUSTRIES</span></h2>
+    <p class="section-sub" data-i18n="s03_sub">人工智能+千行百业：从制造车间到田间地头，新质生产力无处不在</p>
+  </div>
+
+  <div class="industry-tabs reveal" id="industryTabs">
+    <div class="industry-tab-list" role="tablist" aria-label="产业领域">
+      <button class="tab-btn active" id="industry-tab-manufacture" type="button" role="tab" aria-selected="true" aria-controls="industryPanel" data-ind="manufacture" data-i18n="ind_manufacture">🏭 智能制造</button>
+      <button class="tab-btn" id="industry-tab-medical" type="button" role="tab" aria-selected="false" aria-controls="industryPanel" data-ind="medical" data-i18n="ind_medical">🏥 智慧医疗</button>
+      <button class="tab-btn" id="industry-tab-agriculture" type="button" role="tab" aria-selected="false" aria-controls="industryPanel" data-ind="agriculture" data-i18n="ind_agriculture">🌾 智慧农业</button>
+      <button class="tab-btn" id="industry-tab-transport" type="button" role="tab" aria-selected="false" aria-controls="industryPanel" data-ind="transport" data-i18n="ind_transport">🚗 智能交通</button>
+      <button class="tab-btn" id="industry-tab-education" type="button" role="tab" aria-selected="false" aria-controls="industryPanel" data-ind="education" data-i18n="ind_education">📚 智慧教育</button>
+      <button class="tab-btn" id="industry-tab-finance" type="button" role="tab" aria-selected="false" aria-controls="industryPanel" data-ind="finance" data-i18n="ind_finance">💰 金融科技</button>
+    </div>
+    <button class="tab-btn penetration-btn" id="penetrationOpen" type="button" aria-pressed="false" aria-controls="industryPenetration" data-i18n="pen_open">📊 渗透率</button>
+  </div>
+
+  <!-- 介绍 + 交互实验室：一屏并排布局 -->
+  <div class="industry-lab reveal">
+    <div class="industry-panel" id="industryPanel" role="tabpanel" tabindex="0" aria-labelledby="industry-tab-manufacture">
+      <div class="ind-img-wrap">
+        <img id="industryImg" src="" alt="产业配图">
+        <div class="ind-img-mask"></div>
+      </div>
+      <div class="ind-info">
+        <h3 id="industryTitle"></h3>
+        <p id="industryDesc"></p>
+        <div class="ind-metrics" id="industryMetrics"></div>
+      </div>
+    </div>
+    <div class="industry-demo" id="industryDemo">
+      <div class="demo-head">
+        <h3><span data-i18n="demo_lab">🧪 交互实验室</span> · <span id="demoTitle"></span></h3>
+        <p id="demoHint"></p>
+      </div>
+      <div class="demo-stage" id="demoStage"></div>
+    </div>
+    <div class="industry-penetration chart-card" id="industryPenetration" hidden>
+      <div class="penetration-panel-head">
+        <div>
+          <h3 data-i18n="ch_penetration">中国各行业AI应用渗透率（2023，估算）</h3>
+          <p class="chart-note" data-i18n="note_penetration">单位：% · 来源：公开研究报告综合整理</p>
+        </div>
+        <button class="penetration-close" id="penetrationClose" type="button" data-i18n="pen_back">返回交互实验室</button>
+      </div>
+      <div id="chartPenetration" class="chart chart-lg"></div>
+    </div>
+  </div>
+  </div>
+</section>
+
+<!-- ============ 5. 区域版图 ============ -->
+<section id="map" class="section">
+  <div class="snap-page">
+  <div class="section-head reveal">
+    <h2><span class="section-index">05</span><span data-i18n="s04_title">区域版图</span><span class="en" data-i18n="s04_en">AI MAP OF CHINA</span></h2>
+    <p class="section-sub" data-i18n="s04_sub">AI企业在全国的集聚分布——京津冀、长三角、粤港澳三大高地引领发展</p>
+  </div>
+  <div class="map-wrap reveal">
+    <div id="chartMap" class="chart chart-map"></div>
+    <div class="map-side">
+      <h3 data-i18n="map_side_t">三大AI产业高地</h3>
+      <div class="map-region"><b data-i18n="map_beijing">京津冀</b><div class="mr-bar"><i style="width:96%"></i></div><span data-i18n="map_beijing_p">北京为核心，大模型数量占全国近半</span></div>
+      <div class="map-region"><b data-i18n="map_yangtze">长三角</b><div class="mr-bar"><i style="width:88%"></i></div><span data-i18n="map_yangtze_p">沪苏浙皖协同，芯片+算法+应用全链条</span></div>
+      <div class="map-region"><b data-i18n="map_guangdong">粤港澳</b><div class="mr-bar"><i style="width:82%"></i></div><span data-i18n="map_guangdong_p">深圳-广州双核，智能硬件与场景落地强</span></div>
+      <div class="map-region"><b data-i18n="map_west">中西部新星</b><div class="mr-bar"><i style="width:45%"></i></div><span data-i18n="map_west_p">成都、武汉、合肥、西安加速崛起</span></div>
+      <p class="chart-note" data-i18n="note_map">气泡/颜色深浅示意各省级行政区AI企业集聚度（公开数据估算）</p>
+    </div>
+  </div>
+  </div>
+</section>
+
+<!-- ============ 6. 效率革命 ============ -->
+<section id="efficiency" class="section">
+  <div class="snap-page">
+  <div class="section-head reveal">
+    <h2><span class="section-index">06</span><span data-i18n="s05_title">效率革命</span><span class="en" data-i18n="s05_en">EFFICIENCY REVOLUTION</span></h2>
+    <p class="section-sub" data-i18n="s05_sub">全要素生产率的跃升，是新质生产力的核心标志——AI带来的效率提升不是10%，而是10倍</p>
+  </div>
+
+  <div class="eff-layout">
+    <div class="chart-card reveal">
+      <h3 data-i18n="ch_efficiency">AI改造前后效率对比（指数化）</h3>
+      <p class="chart-note" data-i18n="note_efficiency">传统方式=100 · 数值越大效率越高 · 来源：行业公开案例整理</p>
+      <div id="chartEfficiency" class="chart chart-lg"></div>
+    </div>
+    <div class="eff-right">
+      <div class="chart-card reveal">
+        <h3 data-i18n="ch_cases">典型场景的真实改变</h3>
+        <div id="chartCases" class="chart chart-lg"></div>
+      </div>
+      <div class="eff-simulator reveal">
+        <div class="sim-title-row"><h3 data-i18n="sim_title">🔬 新质生产力模拟器</h3><span class="sim-sub" data-i18n="sim_desc">拖动滑块查看智能化改造效果</span></div>
+        <div class="sim-body">
+          <div class="sim-controls">
+            <label><span data-i18n="sim_rate">AI技术渗透率</span> <b id="simRateVal">50%</b></label>
+            <input type="range" id="simRate" min="0" max="100" value="50">
+            <label><span data-i18n="sim_invest">智能化投入强度</span> <b id="simInvestVal">中</b></label>
+            <input type="range" id="simInvest" min="1" max="3" value="2" step="1">
+          </div>
+          <div class="sim-results">
+            <div class="sim-card"><span data-i18n="sim_eff">生产效率提升</span><b id="simEff">+62%</b></div>
+            <div class="sim-card"><span data-i18n="sim_cost">运营成本降低</span><b id="simCost">-28%</b></div>
+            <div class="sim-card"><span data-i18n="sim_defect">不良品率下降</span><b id="simDefect">-55%</b></div>
+            <div class="sim-card"><span data-i18n="sim_labor">释放人力转向创造性岗位</span><b id="simLabor">310人</b></div>
+          </div>
+        </div>
+        <p class="chart-note" data-i18n="note_sim">* 模拟参数参考《智能制造发展指数报告》及灯塔工厂改造均值，仅作示意</p>
+      </div>
+    </div>
+  </div>
+  </div>
+</section>
+
+<!-- ============ 6.5 生产力实验室 ============ -->
+<section id="lab" class="section">
+  <div class="snap-page">
+  <div class="section-head reveal">
+    <h2><span class="section-index">07</span><span data-i18n="lab_title">生产力实验室</span><span class="en" data-i18n="lab_en">NQPF LAB</span></h2>
+    <p class="section-sub" data-i18n="lab_sub">你就是数字经济的规划师：把算力、数据、人才、算法四类要素投入经济体，再调整AI渗透率，实时观察全要素生产率如何跃迁——生产要素的创新性配置，正是新质生产力的成因</p>
+  </div>
+
+  <div class="lab-top reveal">
+    <div class="lab-controls">
+      <h3 data-i18n="lab_ctrl">🎛️ 要素配置台</h3>
+      <div class="lab-bud"><span data-i18n="lab_budget">要素投入总量</span><b id="labTotal">100</b><i>/ 200</i></div>
+      <label><span data-i18n="lab_compute">⚡ 算力</span><b id="vC">30</b></label>
+      <input type="range" id="sC" min="0" max="50" value="30">
+      <label><span data-i18n="lab_data">💎 数据</span><b id="vD">30</b></label>
+      <input type="range" id="sD" min="0" max="50" value="30">
+      <label><span data-i18n="lab_talent">🧑‍🔬 人才</span><b id="vT">20</b></label>
+      <input type="range" id="sT" min="0" max="50" value="20">
+      <label><span data-i18n="lab_algo">🧠 算法</span><b id="vA">20</b></label>
+      <input type="range" id="sA" min="0" max="50" value="20">
+      <label class="lab-pen"><span data-i18n="lab_pen">🌐 产业AI渗透率</span><b id="vP">60%</b></label>
+      <input type="range" id="sP" min="0" max="100" value="60">
+      <button id="labReset" data-i18n="lab_reset">↺ 重置配置</button>
+    </div>
+    <div class="lab-right">
+      <div class="lab-charts">
+        <div class="lab-card">
+          <h3 data-i18n="lab_tfp">全要素生产率（TFP）指数</h3>
+          <div id="labGauge" style="height:250px"></div>
+        </div>
+        <div class="lab-card">
+          <h3 data-i18n="lab_radar">新质生产力画像</h3>
+          <div id="labRadar" style="height:250px"></div>
+        </div>
+      </div>
+      <div class="lab-card lab-diag">
+        <h3 data-i18n="lab_diag">🤖 AI 配置诊断</h3>
+        <div id="labDiag"></div>
+        <p class="chart-note" data-i18n="lab_diag_calc">模型说明：要素投入遵循边际收益递减（√曲线），算力×数据、人才×算法存在协同乘数，配置失衡将产生内耗。本模型基于公开研究示意。</p>
+      </div>
+    </div>
+  </div>
+  </div>
+
+  <div class="snap-page">
+  <div class="lab-mid reveal">
+    <div class="lab-card lab-wide">
+      <h3 data-i18n="lab_line">AI 创造的 GDP 增量预测（2026-2030）</h3>
+      <div id="labLine" style="height:280px"></div>
+    </div>
+    <div class="chart-card">
+      <h3 data-i18n="sk_title">数据要素价值流：从原始数据到新质生产力</h3>
+      <p class="chart-note" data-i18n="sk_note">桑基图 · 流量为示意指数 · 悬停查看数据如何被加工、训练并转化为价值</p>
+      <div id="sankeyChart" style="height:460px"></div>
+    </div>
+  </div>
+  </div>
+</section>
+
+<!-- ============ 8. 就业重塑 ============ -->
+<section id="jobs" class="section">
+  <div class="snap-page">
+  <div class="section-head reveal">
+    <h2><span class="section-index">08</span><span data-i18n="s09_title">就业重塑</span><span class="en" data-i18n="s09_en">FUTURE OF WORK</span></h2>
+    <p class="section-sub" data-i18n="s09_sub">AI 替代的是任务，不是职业——选择一个职业看它的自动化风险，再测测你自己的"人机协作指数"</p>
+  </div>
+
+  <div class="jobs-wrap reveal">
+    <div class="chart-card job-main">
+      <h3 class="job-h3" data-i18n="job_pick">🔎 选择一个职业，查看 AI 冲击画像</h3>
+      <div class="job-grid" id="jobGrid">
+        <button data-job="entry">⌨️ <span data-i18n="j_entry">数据录入员</span></button>
+        <button data-job="qa">🏭 <span data-i18n="j_qa">流水线质检员</span></button>
+        <button data-job="cs">🎧 <span data-i18n="j_cs">客服专员</span></button>
+        <button data-job="trans">🌐 <span data-i18n="j_trans">笔译/口译</span></button>
+        <button data-job="acc">🧮 <span data-i18n="j_acc">会计核算</span></button>
+        <button data-job="drive">🚚 <span data-i18n="j_drive">货运司机</span></button>
+        <button data-job="code" class="active">💻 <span data-i18n="j_code">初级程序员</span></button>
+        <button data-job="design">🎨 <span data-i18n="j_design">平面设计师</span></button>
+        <button data-job="fa">📊 <span data-i18n="j_fa">金融分析师</span></button>
+        <button data-job="teacher">📚 <span data-i18n="j_teacher">中小学教师</span></button>
+        <button data-job="doctor">🩺 <span data-i18n="j_doctor">全科医生</span></button>
+        <button data-job="nurse">🩹 <span data-i18n="j_nurse">养老护理员</span></button>
+        <button data-job="clerk">🗂️ <span data-i18n="j_clerk">行政文员</span></button>
+        <button data-job="telesales">📞 <span data-i18n="j_telesales">电话销售</span></button>
+        <button data-job="mkt">📣 <span data-i18n="j_mkt">市场营销专员</span></button>
+        <button data-job="da">📈 <span data-i18n="j_da">数据分析师</span></button>
+        <button data-job="lawyer">⚖️ <span data-i18n="j_lawyer">律师</span></button>
+        <button data-job="psy">🧠 <span data-i18n="j_psy">心理咨询师</span></button>
+      </div>
+      <div class="job-body">
+        <div class="job-gauge-box">
+          <div id="jobGauge"></div>
+          <i class="job-rk-title" id="jobRiskTitle"></i>
+          <i id="jobRiskLvl"></i>
+        </div>
+        <div class="job-info">
+          <h4 id="jobName"></h4>
+          <div class="job-metrics">
+            <div><b id="jobChange">—</b><span data-i18n="job_change">未来5年岗位变化</span></div>
+            <div><b id="jobAug">—</b><span data-i18n="job_augment">AI增强潜力</span></div>
+            <div><b id="jobSalary">—</b><span data-i18n="job_salary">技能溢价（薪资影响）</span></div>
+          </div>
+          <div class="job-advice"><i>💡</i><p id="jobAdvice"></p></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="jobs-right">
+      <div class="chart-card">
+        <h3 data-i18n="job_skills_req">该职业的能力结构</h3>
+        <div id="jobRadar" style="height:236px"></div>
+      </div>
+      <div class="chart-card skill-test">
+        <h3 class="st-heading"><span data-i18n="st_title">🧬 我的人机协作指数</span><span class="st-hint" data-i18n="st_p">拖动滑块描述你的工作/学习内容</span></h3>
+        <div class="st-row"><span data-i18n="st_rep">任务重复性</span><b id="stRepV">50</b><input type="range" id="stRep" min="0" max="100" value="50"></div>
+        <div class="st-row"><span data-i18n="st_data">数据/数字工作占比</span><b id="stDataV">50</b><input type="range" id="stData" min="0" max="100" value="50"></div>
+        <div class="st-row"><span data-i18n="st_cre">创造性要求</span><b id="stCreV">50</b><input type="range" id="stCre" min="0" max="100" value="50"></div>
+        <div class="st-row"><span data-i18n="st_soc">人际协作强度</span><b id="stSocV">50</b><input type="range" id="stSoc" min="0" max="100" value="50"></div>
+        <div class="st-row"><span data-i18n="st_dig">AI工具熟练度</span><b id="stDigV">50</b><input type="range" id="stDig" min="0" max="100" value="50"></div>
+        <div class="st-result">
+          <div class="st-score"><b id="stScore">—</b><i>/ 100</i></div>
+          <div class="st-barbox"><div class="st-bar" id="stBar"></div></div>
+          <span id="stLvl"></span>
+        </div>
+      </div>
+    </div>
+  </div>
+  </div>
+
+  <div class="snap-page">
+  <div class="jobs-charts reveal">
+    <div class="chart-card"><div id="jobsLostChart" style="height:300px"></div></div>
+    <div class="chart-card"><div id="jobsNewChart" style="height:300px"></div></div>
+  </div>
+  <div class="chart-card reveal">
+    <h3 data-i18n="skills_title">未来核心技能需求变迁：2025 → 2030</h3>
+    <p class="chart-note" data-i18n="skills_note">企业核心技能需求占比（%，示意）· 参考：WEF《未来就业报告2025》</p>
+    <div id="skillsChart" style="height:330px"></div>
+  </div>
+  </div>
+</section>
+
+<!-- ============ 9. 技术谱系与治理 ============ -->
+<section id="govern" class="section">
+  <div class="snap-page">
+  <div class="section-head reveal">
+    <h2><span class="section-index">09</span><span data-i18n="s10_title">技术谱系与治理</span><span class="en" data-i18n="s10_en">LINEAGE &amp; GOVERNANCE</span></h2>
+    <p class="section-sub" data-i18n="s10_sub">一张图看懂AI技术家族的来龙去脉；越强大的生产力，越需要与之匹配的治理框架</p>
+  </div>
+
+  <div class="gov-wrap reveal">
+    <div class="gov-left">
+      <div class="chart-card kg-card">
+        <h3 data-i18n="kg_title">人工智能技术谱系图</h3>
+        <p class="chart-note" data-i18n="kg_note">可拖拽、缩放 · 点击任意节点查看说明 · 高亮相邻关系</p>
+        <div id="kgChart" style="height:300px"></div>
+      </div>
+      <div class="chart-card kg-detail" id="kgDetail"></div>
+    </div>
+    <div class="kg-side">
+      <div class="chart-card">
+        <h3 data-i18n="risk_title">AI 风险矩阵：发生概率 × 影响程度</h3>
+        <p class="chart-note" data-i18n="risk_note">气泡大小代表治理紧迫度 · 右上红区为需优先应对的高概率高影响风险（示意）</p>
+        <div id="riskChart" style="height:200px"></div>
+      </div>
+      <div class="chart-card">
+        <h3 data-i18n="gov_title">全球AI治理格局</h3>
+        <p class="chart-note" data-i18n="gov_note">五维能力示意对比</p>
+        <div id="govChart" style="height:280px"></div>
+      </div>
+    </div>
+  </div>
+  </div>
+</section>
+
+<!-- ============ 10. 浪潮之巅 ============ -->
+<section id="timeline" class="section">
+  <div class="snap-page">
+  <div class="section-head reveal">
+    <h2><span class="section-index">10</span><span data-i18n="s06_title">浪潮之巅</span><span class="en" data-i18n="s06_en">THE AI WAVE</span></h2>
+    <p class="section-sub" data-i18n="s06_sub">从深度学习的星星之火，到大模型的燎原之势——技术奇点正在加速临近</p>
+  </div>
+
+  <div class="tl-wrap">
+    <div class="tl-line"></div>
+    <div class="tl-list" id="tlList"><!-- JS 注入 --></div>
+  </div>
+  </div>
+
+  <div class="snap-page">
+  <div class="tl-charts reveal">
+    <div class="chart-card">
+      <h3 data-i18n="ch_models">全球大模型参数量与能力演进</h3>
+      <p class="chart-note" data-i18n="note_models">标志性模型发布参数量（对数轴）· 来源：公开资料整理</p>
+      <div id="chartModels" class="chart chart-lg"></div>
+    </div>
+    <div class="chart-card race-card">
+      <div class="race-head">
+        <div>
+          <h3 data-i18n="race_title">全球AI竞赛 · 十年格局演变</h3>
+          <p class="chart-note" data-i18n="race_note">各国AI核心产业规模估算（十亿美元）· 来源：Stanford AI Index、信通院等综合估算</p>
+        </div>
+        <div class="race-ctrl">
+          <button id="racePlay" title="播放">⏸</button>
+          <input type="range" id="raceYear" min="2015" max="2025" value="2015" step="1">
+          <b id="raceYearVal">2015</b>
+        </div>
+      </div>
+      <div id="raceChart"></div>
+    </div>
+  </div>
+  </div>
+</section>
+
+<!-- ============ 11. 未来展望 ============ -->
+<section id="future" class="section">
+  <div class="snap-page">
+  <div class="section-head reveal">
+    <h2><span class="section-index">11</span><span data-i18n="s07_title">未来展望</span><span class="en" data-i18n="s07_en">INTO THE FUTURE</span></h2>
+    <p class="section-sub" data-i18n="s07_sub">当智能成为像电一样的基础设施，每一个人都将站在新质生产力的浪潮之上</p>
+  </div>
+
+  <div class="future-panel reveal">
+    <div class="future-hero">
+      <h3 data-i18n="future_hero_t">智能经济 · 智绘未来</h3>
+      <p data-i18n="future_hero_p">麦肯锡预测：生成式AI每年可为全球经济增加 2.6~4.4 万亿美元价值</p>
+    </div>
+
+    <div class="charts-grid">
+      <div class="chart-card reveal">
+        <h3 data-i18n="ch_future">中国AI产业规模未来预测</h3>
+        <p class="chart-note" data-i18n="note_future">单位：亿元 · 2025年后为多机构预测中值（示意）</p>
+        <div id="chartFuture" class="chart chart-lg"></div>
+      </div>
+      <div class="future-cards reveal">
+        <div class="fc-card"><b data-i18n="fc_1">具身智能</b><p data-i18n="fc_1p">人形机器人走出实验室，进入工厂与家庭，2025年被视为量产元年</p></div>
+        <div class="fc-card"><b data-i18n="fc_2">AI for Science</b><p data-i18n="fc_2p">AlphaFold破解2亿+蛋白质结构，AI正在重塑科学发现本身的范式</p></div>
+        <div class="fc-card"><b data-i18n="fc_3">智能体时代</b><p data-i18n="fc_3p">AI Agent自主规划执行复杂任务，成为新一代“数字劳动力”</p></div>
+        <div class="fc-card"><b data-i18n="fc_4">绿色智能</b><p data-i18n="fc_4p">AI优化电网与能耗，让新质生产力同时成为绿色生产力</p></div>
+      </div>
+    </div>
+  </div>
+  </div>
+
+  <div class="snap-page">
+  <div class="conclusion reveal">
+    <h3 data-i18n="conclusion_t">结语</h3>
+    <p data-i18n-html="conclusion_p">人工智能不是一次普通的技术升级，而是<b>生产力的基因重组</b>。<br>它让机器拥有“智能”，让数据成为“要素”，让每一个人都被赋予前所未有的创造能力。<br><span class="gradient-text">发展新质生产力，核心在科技创新，关键在人工智能，未来在每一个人手中。</span></p>
+  </div>
+  <footer>
+    <div class="footer-inner">
+      <div>
+        <b data-i18n="footer_b">智启新元 · 人工智能 × 新质生产力</b>
+        <p data-i18n="footer_p">数据可视化专题网站 · 数据来源：中国信通院、工信部、WIPO、IFR、PwC、麦肯锡等公开报告整理</p>
+      </div>
+      <p class="footer-right" data-i18n="footer_r">Designed & Built for NQPF Visualization</p>
+    </div>
+  </footer>
+  </div>
+</section>
+
+</main>
+
+<button id="backTop" aria-label="返回顶部">↑</button>
+
+<!-- AI 智能助手 -->
+<button id="aiFab" aria-label="AI助手"><span class="ai-fab-icon">🤖</span><span class="ai-fab-text" data-i18n="ai_open">AI 助手</span></button>
+<div id="aiPanel">
+  <div class="ai-head">
+    <span class="ai-avatar">🤖</span>
+    <div><b data-i18n="ai_title">智启新元 · AI 助手</b><i>● <span data-i18n="ai_badge">AI</span> Online</i></div>
+    <button id="aiClose" aria-label="关闭">×</button>
+  </div>
+  <div class="ai-body" id="aiBody"></div>
+  <div class="ai-chips" id="aiChips"></div>
+  <div class="ai-input">
+    <input id="aiInput" data-i18n-placeholder="ai_ph" placeholder="问我任何关于新质生产力的问题…">
+    <button id="aiSend" aria-label="发送">➤</button>
+  </div>
+</div>
+
+<script src="js/data.js"></script>
+<script src="js/i18n.js"></script>
+<script src="js/particles.js"></script>
+<script src="js/charts.js"></script>
+<script src="js/demos.js"></script>
+<script src="js/lab.js"></script>
+<script src="js/ailab.js"></script>
+<script src="js/assistant.js"></script>
+<script src="js/main.js"></script>
+</body>
+</html>
