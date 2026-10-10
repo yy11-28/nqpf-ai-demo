@@ -263,17 +263,17 @@ function renderMap() {
     textStyle: { color: isLight ? '#13233f' : '#e5eefc', fontSize: 12 }
   };
   const mapData = [
-    { name: '北京', value: 1900 }, { name: '广东', value: 1250 }, { name: '上海', value: 920 },
-    { name: '浙江', value: 720 }, { name: '江苏', value: 680 }, { name: '山东', value: 420 },
-    { name: '四川', value: 360 }, { name: '湖北', value: 310 }, { name: '安徽', value: 290 },
-    { name: '福建', value: 260 }, { name: '陕西', value: 230 }, { name: '湖南', value: 210 },
-    { name: '天津', value: 190 }, { name: '重庆', value: 175 }, { name: '河南', value: 160 },
-    { name: '辽宁', value: 145 }, { name: '河北', value: 120 }, { name: '江西', value: 95 },
-    { name: '广西', value: 70 }, { name: '山西', value: 65 }, { name: '云南', value: 60 },
-    { name: '贵州', value: 55 }, { name: '黑龙江', value: 50 }, { name: '吉林', value: 42 },
-    { name: '内蒙古', value: 35 }, { name: '新疆', value: 30 }, { name: '甘肃', value: 28 },
-    { name: '海南', value: 40 }, { name: '宁夏', value: 18 }, { name: '青海', value: 10 },
-    { name: '西藏', value: 5 }, { name: '台湾', value: 210 }, { name: '香港', value: 180 }, { name: '澳门', value: 12 }
+    { name: '北京市', value: 1900 }, { name: '广东省', value: 1250 }, { name: '上海市', value: 920 },
+    { name: '浙江省', value: 720 }, { name: '江苏省', value: 680 }, { name: '山东省', value: 420 },
+    { name: '四川省', value: 360 }, { name: '湖北省', value: 310 }, { name: '安徽省', value: 290 },
+    { name: '福建省', value: 260 }, { name: '陕西省', value: 230 }, { name: '湖南省', value: 210 },
+    { name: '天津市', value: 190 }, { name: '重庆市', value: 175 }, { name: '河南省', value: 160 },
+    { name: '辽宁省', value: 145 }, { name: '河北省', value: 120 }, { name: '江西省', value: 95 },
+    { name: '广西壮族自治区', value: 70 }, { name: '山西省', value: 65 }, { name: '云南省', value: 60 },
+    { name: '贵州省', value: 55 }, { name: '黑龙江省', value: 50 }, { name: '吉林省', value: 42 },
+    { name: '内蒙古自治区', value: 35 }, { name: '新疆维吾尔自治区', value: 30 }, { name: '甘肃省', value: 28 },
+    { name: '海南省', value: 40 }, { name: '宁夏回族自治区', value: 18 }, { name: '青海省', value: 10 },
+    { name: '西藏自治区', value: 5 }, { name: '台湾省', value: 210 }, { name: '香港特别行政区', value: 180 }, { name: '澳门特别行政区', value: 12 }
   ];
   function renderFallback() {
     makeChart('chartMap', {
@@ -291,10 +291,10 @@ function renderMap() {
     makeChart('chartMap', {
       tooltip: { ...TIPMAP, formatter: p => `${p.name}<br>${isEn ? 'AI density' : 'AI企业集聚度'}：<b style="color:#22d3ee">${isNaN(p.value) ? '—' : p.value}</b>${isEn ? ' (est.)' : '（估算指数）'}` },
       visualMap: {
-        min: 0, max: 2000, left: 16, bottom: 16, text: [isEn ? 'High' : '高', isEn ? 'Low' : '低'],
+        min: 0, max: 800, left: 16, bottom: 16, text: [isEn ? 'High' : '高', isEn ? 'Low' : '低'],
         textStyle: { color: textDim },
         inRange: { color: isLight
-          ? ['#dbe7f8', '#9cc2ee', '#5b9bd5', '#1d7fd1', '#7c3aed']
+          ? ['#e9f2fc', '#a7c6f0', '#5f9be6', '#1d6fd6', '#5b21b6']
           : ['#0b1b3a', '#134b8f', '#1d7fd1', '#22d3ee', '#a855f7'] },
         calculable: true
       },
