@@ -303,7 +303,7 @@ function renderMap() {
         layoutCenter: ['50%', '68%'], layoutSize: '140%', zoom: 1.08, aspectScale: 0.9,
         label: { show: true, color: isLight ? '#33475e' : '#c8dcf5', fontSize: 10 },
         emphasis: { label: { show: true, color: isLight ? '#0f1f38' : '#fff', fontSize: 12, fontWeight: 'bold' }, itemStyle: { areaColor: '#fbbf24', shadowBlur: 20, shadowColor: 'rgba(251,191,36,.6)' } },
-        itemStyle: { borderColor: isLight ? 'rgba(59,130,246,.4)' : 'rgba(34,211,238,.35)', borderWidth: .8, areaColor: isLight ? '#e8eef8' : '#0b1b3a' },
+        itemStyle: { borderColor: isLight ? 'rgba(59,130,246,.4)' : 'rgba(34,211,238,.35)', borderWidth: .8 },
         select: { disabled: true },
         data: mapData
       }]
